@@ -3,7 +3,7 @@ $lastoctect = 0
 $ErrorActionPreference = 'silentlyContinue'
 $WarningPreference = 'SilentlyContinue'
 
-while($lastoctect -ne 11) 
+while($lastoctect -ne 255) 
 {
     $lastoctect++
     $ipadd = $ipnet + $lastoctect
