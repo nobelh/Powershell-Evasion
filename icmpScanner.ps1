@@ -7,9 +7,11 @@ while($lastoctect -ne 255)
 {
     $lastoctect++
     $ipadd = $ipnet + $lastoctect
-    $tryping = (Test-NetConnection $ipadd).pingsucceeded
+    $tryping = (Test-NetConnection $ipadd -ErrorAction SilentlyContinue -WarningAction SilentlyContinue).pingsucceeded
     
     if ($tryping -eq 'True'){
-        write-host $ipadd
+        Write-Host 'Live Hosts'
+        Write-Host  '-----------'
+        Write-Host $ipadd
     }
 }
