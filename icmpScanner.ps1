@@ -1,10 +1,6 @@
 $ipnet = '10.0.0.'
 $lastoctect = 0
-$ErrorActionPreference = 'silentlyContinue'
-$WarningPreference = 'SilentlyContinue'
-
-while($lastoctect -ne 255) 
-{
+while($lastoctect -ne 255) {
     $lastoctect++
     $ipadd = $ipnet + $lastoctect
     $tryping = (Test-NetConnection $ipadd -ErrorAction SilentlyContinue -WarningAction SilentlyContinue).pingsucceeded
